@@ -40,6 +40,7 @@ deep_li_information = results.find_element(:class, "b_vlist2col b_deep")
 if results[0].find_element(:class, "deeplink_title").link  == "https://www.sparkcentral.com/"
 	print "First link redirects to /product page"
 else 
-	print "Failed :: first item is not /product. "
+	print "Failed :: first item is not /product page "
 end
 
+browser.quit
