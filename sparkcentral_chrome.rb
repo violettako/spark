@@ -25,7 +25,6 @@ run do
 
   # 2. Perform search 'sparkcentral'
   @browser.find_element(id: "sb_form").find_element(class: "b_searchbox").send_keys ["sparkcentral"]
-  #click magnifying glass
   @browser.find_element(id: "sb_form_go").click
   
 
@@ -42,14 +41,13 @@ run do
   end 
 
 
-
-  
   # 3. Verify that first search result 'Sparkcentral - Official Site', if not it will get an error 
   first_result = search_results.first
 
   if first_result.text.include? "Sparkcentral - Official Site"
     puts "Sparkcentral official site is the first result!"
 
+    
   # 5. Verify that 'Product' link in first search result is actually pointing to /product
     product_link = first_result.find_element(link_text: "Product")
     if product_link.attribute(:href) == "https://www.sparkcentral.com/product/"
@@ -58,7 +56,6 @@ run do
       if @browser.current_url == "https://www.sparkcentral.com/product/"
         puts "Test Passed! :} First link was /product"
       else
-      	#'raise' throws RuntimeError
         raise "uh-oh, link redirects to #{@browser.current_url}, not cool"
       end
     else
