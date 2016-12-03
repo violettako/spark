@@ -17,7 +17,8 @@ module.exports = {
     // 3. Verify that first search result 'Sparkcentral - Official Site'
       .assert.containsText('ol#b_results li:first-child',
         'Sparkcentral - Official Site')
-
+    
+    // Attempt :: 4. Verify that all search results on first page contain 'Sparkcentral'
     // Attempt to get text from each li element. didn`t get it all the way through.
     // doesn`t have to be commented out, because made it so it pass. but doesn`t return the right data 
       .execute(function(){
@@ -33,7 +34,7 @@ module.exports = {
       })
     // end of attempt
 
-    // 3. Verify that 'Product' link in first search result is actually pointing to /product
+    // 5. Verify that 'Product' link in first search result is actually pointing to /product
       .assert.containsText('div.b_vlist2col ul li:first-child', 'Product')
       .pause(5000)
       .end();
