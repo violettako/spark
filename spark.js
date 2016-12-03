@@ -14,7 +14,7 @@ module.exports = {
       .waitForElementVisible('body')
       .assert.title('sparkcentral - Bing')
 
-    // verify if first item is official site
+    // 3. Verify that first search result 'Sparkcentral - Official Site'
       .assert.containsText('ol#b_results li:first-child',
         'Sparkcentral - Official Site')
 
@@ -33,7 +33,7 @@ module.exports = {
       })
     // end of attempt
 
-    // 3. Verify that first search result 'Sparkcentral - Official Site'
+    // 3. Verify that 'Product' link in first search result is actually pointing to /product
       .assert.containsText('div.b_vlist2col ul li:first-child', 'Product')
       .pause(5000)
       .end();
